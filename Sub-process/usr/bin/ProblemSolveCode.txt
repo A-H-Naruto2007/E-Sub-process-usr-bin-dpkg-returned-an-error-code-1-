@@ -1,0 +1,14 @@
+Now solve this problem "Sub-process /usr/bin/dpkg returned an error code (1)".
+
+Use the following commands one by one -
+1. sudo mv /var/lib/dpkg/info /var/lib/dpkg/info_silent
+2. sudo mkdir /var/lib/dpkg/info
+3. sudo apt-get update
+4. sudo apt-get -f install
+5. sudo mv /var/lib/dpkg/info/* /var/lib/dpkg/info_silent
+6. sudo rm -rf /var/lib/dpkg/info
+7. sudo mv /var/lib/dpkg/info_silent /var/lib/dpkg/info
+8. sudo apt-get update
+9. sudo apt-get upgrade
+
+Now we resolved the error and successful.
